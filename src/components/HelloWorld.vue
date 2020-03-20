@@ -11,6 +11,10 @@
      <div>
         <input v-bind:value="myName" type="text">
     </div>
+    <div>
+        <button v-on:click="increase">click me </button>
+        <p>{{counter}}</p>
+    </div>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -48,12 +52,16 @@ export default {
       myName: 'Marce',
       age: 55,
       someImageUrl:"http://placekitten.com/200/300",
+      counter: 0,
     };
   },
   methods: {
     randomNumber() {
       return Math.random(0,1);
-    }
+    },
+    increase() {
+      this.counter++
+    },
   },
   props: {
     msg: String
