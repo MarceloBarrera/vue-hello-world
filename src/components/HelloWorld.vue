@@ -12,7 +12,7 @@
         <input v-bind:value="myName" type="text">
     </div>
     <div>
-        <button v-on:click="increase">click me </button>
+        <button v-on:click="increase(2, $event)">click me </button>
         <p>{{counter}}</p>
         <p v-on:mousemove="updateCoordinates">
           Coordinates: {{x}} / {{y}}
@@ -43,8 +43,8 @@ export default {
     randomNumber() {
       return Math.random(0,1);
     },
-    increase() {
-      this.counter++
+    increase(step, event) {
+      this.counter += step + event.clientX;  
     },
     updateCoordinates: function (event) {
       this.x = event.clientX;
