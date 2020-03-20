@@ -5,6 +5,12 @@
     <p v-once> {{title}} </p>
     <p> {{sayHello()}} </p>
     <a v-bind:href="link">Google</a>
+    <hr>
+    <p>
+      {{finishedLink}}      
+    </p>
+    <p v-html="finishedLink">       
+    </p>
   </div>
 </template>
 
@@ -19,7 +25,8 @@ export default {
    data() {
     return {
       title: 'Hello pepepeppepe!!!!!!!!!!!!!!!!!!',
-      link: 'http://google.com'
+      link: 'http://google.com',
+      finishedLink: '<a href="http://google.com"> Google <a/>'
       }
   },
   methods: {
