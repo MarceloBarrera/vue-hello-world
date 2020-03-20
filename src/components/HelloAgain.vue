@@ -27,6 +27,14 @@ export default {
       return this.counter > 5 ? 'greater than 5' : 'Smaller than 5';
     }
   },
+  watch: {
+    counter() { //value
+      var vm = this;
+      setTimeout(()=>{
+        vm.counter = 0;
+      },2000)
+    }
+  },
   methods: {    
     result() {      
       console.log('re-CALCULATED!!!!');
