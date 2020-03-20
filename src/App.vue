@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <HelloAgain />
     <p v-once> {{title}} </p>
     <p> {{sayHello()}} </p>
     <a v-bind:href="link">Google</a>
@@ -15,12 +16,14 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
+import HelloAgain from './components/HelloAgain.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+   // HelloWorld, 
+    HelloAgain
   },
    data() {
     return {
