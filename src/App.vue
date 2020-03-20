@@ -4,6 +4,7 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <p> {{title}} </p>
     <p> {{sayHello()}} </p>
+    <a v-bind:href="link">Google</a>
   </div>
 </template>
 
@@ -17,7 +18,8 @@ export default {
   },
    data() {
     return {
-      title: 'Hello pepepeppepe!!!!!!!!!!!!!!!!!!'
+      title: 'Hello pepepeppepe!!!!!!!!!!!!!!!!!!',
+      link: 'http://google.com'
       }
   },
   methods: {
