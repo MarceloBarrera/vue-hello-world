@@ -1,6 +1,16 @@
 <template>
   <div class="hello">
+    
     <h1>{{ msg }}</h1>
+     <p>VueJS is pretty cool - {{myName}} ({{age}})</p>
+     <p>multi ({{age * 3}})</p>
+     <p>random: {{randomNumber()}}</p>
+      <div>
+        <img v-bind:src="someImageUrl" style="width:100px;height:100px">
+    </div>
+     <div>
+        <input v-bind:value="myName" type="text">
+    </div>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -33,6 +43,18 @@
 <script>
 export default {
   name: 'HelloWorld',
+  data () {
+    return {
+      myName: 'Marce',
+      age: 55,
+      someImageUrl:"http://placekitten.com/200/300",
+    };
+  },
+  methods: {
+    randomNumber() {
+      return Math.random(0,1);
+    }
+  },
   props: {
     msg: String
   }
