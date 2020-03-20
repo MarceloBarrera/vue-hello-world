@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <p> {{title}} </p>
+    <p v-once> {{title}} </p>
     <p> {{sayHello()}} </p>
     <a v-bind:href="link">Google</a>
   </div>
@@ -24,6 +24,7 @@ export default {
   },
   methods: {
     sayHello() {
+      this.title = 'HELLO!'
       return 'MAMAMAMAMAAM' + this.title;
     }
   }
