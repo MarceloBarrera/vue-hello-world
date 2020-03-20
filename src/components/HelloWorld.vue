@@ -13,7 +13,10 @@
     </div>
     <div>
         <button v-on:click="increase(2, $event)">click me </button>
+        <button v-on:click="counter++">click me direct javascript in template </button>
         <p>{{counter}}</p>
+        <p>{{counter * 2 > 10 ? 'greater than 10': 'no greater than 10'}}</p>
+
         <p v-on:mousemove="updateCoordinates">
           Coordinates: {{x}} / {{y}}
           - <span v-on:mousemove.stop> DEAD SPOT </span>
