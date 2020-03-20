@@ -22,6 +22,8 @@
           - <span v-on:mousemove.stop> DEAD SPOT </span>
         </p>
         <input type="text" v-on:keyup.enter="alertMe">
+        <input type="text" v-model="myName">
+        yeah: {{myName}}
     </div>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
