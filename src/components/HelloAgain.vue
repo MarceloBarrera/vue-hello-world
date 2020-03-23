@@ -1,5 +1,5 @@
 <template>
-  <div class="demo" @click="attachRed = !attachRed" :class="divClasses">    
+  <div>    
     <div>
         <button v-on:click="counter++">Increase me </button>        
         <button v-on:click="counter--">Decrease me </button>        
@@ -12,6 +12,12 @@
     <div class="demo" :class="[color, {red: false} ]">
       pepepepepe
     </div>  
+    <div class="demo" :style="{backgroundColor: color}"></div>
+    <div class="demo" :style="myStyle"></div>
+    <div class="demo" :style="[myStyle, {height: width + 'px'}]"></div>
+    <hr>
+    <input type="text" v-model="color">
+    <input type="text" v-model="width">
   </div>
   
 </template>
@@ -24,10 +30,17 @@ export default {
       counter: 0,      
       secondCounter: 0,
       attachRed: false,
-      color: 'green',
+      color: 'gray',
+      width: 100
     };
   },
   computed: {
+    myStyle: function() {      
+      return {
+        backgroundColor: this.color,
+        width: this.width + 'px'
+      };
+    },
     divClasses() {
       return {
         red: this.attachRed,
@@ -59,6 +72,13 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .demo {
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  display: inline-block;
+  margin: 10px;
+}
+.demoA {
   background-color: gray;
 }
 .red {
