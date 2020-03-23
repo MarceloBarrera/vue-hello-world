@@ -8,8 +8,12 @@
         <p>second counter: {{secondCounter}}</p>               
         <p>result: {{result()}}</p>               
         <p>result: {{output}}</p>               
-    </div>    
+    </div>  
+    <div class="demo" :class="[color, {red: false} ]">
+      pepepepepe
+    </div>  
   </div>
+  
 </template>
 
 <script>
@@ -19,7 +23,8 @@ export default {
     return {      
       counter: 0,      
       secondCounter: 0,
-      attachRed: false
+      attachRed: false,
+      color: 'green',
     };
   },
   computed: {
