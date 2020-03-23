@@ -1,5 +1,5 @@
 <template>
-  <div class="demo" @click="attachRed = !attachRed" :class="{'red': attachRed}">    
+  <div class="demo" @click="attachRed = !attachRed" :class="{red: attachRed, blue: !attachRed}">    
     <div>
         <button v-on:click="counter++">Increase me </button>        
         <button v-on:click="counter--">Decrease me </button>        
