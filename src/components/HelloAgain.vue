@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">    
+  <div class="demo" @click="attachRed = !attachRed" :class="{'red': attachRed}">    
     <div>
         <button v-on:click="counter++">Increase me </button>        
         <button v-on:click="counter--">Decrease me </button>        
@@ -18,7 +18,8 @@ export default {
   data () {
     return {      
       counter: 0,      
-      secondCounter: 0,      
+      secondCounter: 0,
+      attachRed: false
     };
   },
   computed: {
@@ -46,6 +47,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.demo {
+  background-color: gray;
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
+.blue {
+  background-color: blue;
+}
+
 h3 {
   margin: 40px 0 0;
 }
