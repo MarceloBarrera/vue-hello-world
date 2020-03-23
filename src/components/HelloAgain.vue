@@ -1,5 +1,5 @@
 <template>
-  <div class="demo" @click="attachRed = !attachRed" :class="{red: attachRed, blue: !attachRed}">    
+  <div class="demo" @click="attachRed = !attachRed" :class="divClasses">    
     <div>
         <button v-on:click="counter++">Increase me </button>        
         <button v-on:click="counter--">Decrease me </button>        
@@ -23,6 +23,12 @@ export default {
     };
   },
   computed: {
+    divClasses() {
+      return {
+        red: this.attachRed,
+        blue: !this.attachRed
+      }
+    },
     output() {
       console.log('COMOUTED!!!!');
       return this.counter > 5 ? 'greater than 5' : 'Smaller than 5';
